@@ -1,0 +1,220 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Utendo';
+    src: url('../fonts/Utendo-Semibold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+:root {
+    --color-primary: #8C5BFF;
+    --color-contrast: #36255E;
+
+    --color-background: #FFFFFF;
+    --color-text: #272727;
+    --color-low-opacity-text: #a3a3a3;
+    --color-input: #E4E4E4;
+
+    --color-primary-button-background: #C3A9FF;
+    --color-primary-button-extrusion: #917DBE;
+
+    --color-secondary-button-background: #E3D8FF;
+    --color-secondary-button-extrusion: #BEB4D5;
+
+    --color-tertiary-button-background: #FFD8E7;
+    --color-tertiary-button-extrusion: #D5B4C8;
+    --color-tertiary-button-text: #5E2541;
+
+    --color-quaternary-button-background: #FFDFC8;
+    --color-quaternary-button-extrusion: #EBB187;
+    --color-quaternary-button-text: #9F5E2F;
+}
+
+.darkmode {
+    --color-primary: #8C5BFF;
+    --color-contrast: #C7AFFF;
+
+    --color-background: #222222;
+    --color-text: #FFFFFF;
+    --color-low-opacity-text: #3C3C3C;
+    --color-input: #2F2F2F;
+
+    --color-primary-button-background: #6641BA;
+    --color-primary-button-extrusion: #4E328E;
+
+    --color-secondary-button-background: #745BAF;
+    --color-secondary-button-extrusion: #52417B;
+
+    --color-tertiary-button-background: #AC406B;
+    --color-tertiary-button-extrusion: #772C4A;
+    --color-tertiary-button-text: #FFFFFF;
+
+    --color-quaternary-button-background: #BE733D;
+    --color-quaternary-button-extrusion: #8C552E;
+    --color-quaternary-button-text: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+
+.header {
+    background-color: var(--color-primary);
+    padding: 16px 0;
+}
+
+.header__logo {
+    display: block;
+    margin: 0 auto;
+    height: 25px;
+}
+
+/* Main content */
+
+.main-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Settings block */
+
+.settings {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button {
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button--secondary {
+    background-color: var(--color-secondary-button-background);
+    color: var(--color-contrast);
+    box-shadow: 0 5px 0 0 var(--color-secondary-button-extrusion);
+}
+
+.settings__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    margin: 20px;
+}
+
+.settings__icon {
+    width: 30px;
+    transform: rotate(10deg);
+}
+
+/* Counter block */
+
+.counter {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.counter__screen-tap-message {
+    font-size: 22px;
+    color: var(--color-low-opacity-text);
+    margin-bottom: 45px;
+}
+
+.reading-text {
+    font-family: 'Inter', Arial, sans-serif;
+}
+
+.low-opacity-text {
+    opacity: 0.5;
+}
+
+.counter__amount {
+    font-size: 140px;
+}
+
+.counter-text {
+    font-family: 'Utendo', Arial, sans-serif;
+}
+
+.contrast-text {
+    color: var(--color-contrast);
+}
+
+.button--primary {
+    background-color: var(--color-primary-button-background);
+    color: var(--color-contrast);
+    box-shadow: 0 5px 0 0 var(--color-primary-button-extrusion);
+}
+
+.counter__button {
+    width: 210px;
+    padding: 15px;
+    font-size: 20px;
+}
+
+/* Actions block */
+
+.actions__decrement-button {
+    display: block;
+    margin: 0 auto 25px auto;
+    width: 210px;
+    padding: 15px;
+    font-size: 20px;
+}
+
+.button--quaternary {
+    background-color: var(--color-quaternary-button-background);
+    color: var(--color-quaternary-button-text);
+    box-shadow: 0 5px 0 0 var(--color-quaternary-button-extrusion);
+}
+
+.actions__bottom-line {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 0 auto 40px auto;
+}
+
+.actions__reset-button {
+    width: 180px;
+    padding: 15px;
+    font-size: 20px;
+}
+
+.button--tertiary {
+    background-color: var(--color-tertiary-button-background);
+    color: var(--color-tertiary-button-text);
+    box-shadow: 0 5px 0 0 var(--color-tertiary-button-extrusion);
+}
+
+.actions__save-button {
+    width: 180px;
+    padding: 15px;
+    font-size: 20px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Taptracker - Tap Counter</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <img class="header__logo" src="assets/images/taptracker-logo.png" alt="Taptracker logo">
+    </header>
+    <main class="main-content">
+        <div class="settings">
+            <button class="button button--secondary settings__button">
+                <img class="settings__icon" src="assets/images/settings-icon.png" alt="Gear icon">
+            </button>
+        </div>
+        <div class="counter">
+            <span class="counter__screen-tap-message reading-text low-opacity-text">Tap anywhere to count</span>
+            <span class="counter__amount counter-text contrast-text">0</span>
+            <button class="button button--primary counter__button reading-text">Count</button>
+        </div>
+        <div class="actions">
+            <button class="button actions__decrement-button button--quaternary reading-text">Decrement</button>
+            <div class="actions__bottom-line">
+                <button class="button actions__reset-button button--tertiary reading-text">Reset</button>
+                <button class="button actions__save-button button--secondary reading-text">Save</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
