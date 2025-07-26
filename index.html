@@ -32,5 +32,69 @@
             </div>
         </div>
     </main>
+
+    <!-- Settings dialog -->
+    <dialog class="settings-dialog">
+        <div class="settings-dialog__header">
+            <span class="settings-dialog__header__title reading-text">Settings</span>
+            <!-- close icon -->
+        </div>
+        <div class="settings-dialog__settings">
+            <div class="settings-dialog__setting">
+                <span class="settings-dialog__setting__title reading-text">Theme</span>
+                <div class="settings-dialog__setting__radio-block">
+                    <label class="settings-dialog__setting__radio-block__radio-label reading-text">
+                        <input class="settings-dialog__setting__radio-block__radio-input" type="radio" name="theme-setting" value="light" checked>
+                        Light
+                    </label>
+                    <label class="settings-dialog__setting__radio-block__radio-label reading-text settings-dialog__setting__radio-block__radio-label--not-first">
+                        <input class="settings-dialog__setting__radio-block__radio-input" type="radio" name="theme-setting" value="dark">
+                        Dark
+                    </label>
+                </div>
+                <div class="settings-dialog__setting__divisor"></div>
+            </div>
+            <div class="settings-dialog__setting">
+                <span class="settings-dialog__setting__title settings-dialog__setting__title--not-first reading-text">Increment per tap</span>
+                <input type="number" class="settings-dialog__setting__number-input reading-text" value="1">
+                <div class="settings-dialog__setting__divisor"></div>
+            </div>
+            <div class="settings-dialog__setting">
+                <span class="settings-dialog__setting__title settings-dialog__setting__title--not-first reading-text">Tap type</span>
+                <div class="settings-dialog__setting__radio-block">
+                    <label class="settings-dialog__setting__radio-block__radio-label reading-text">
+                        <input class="settings-dialog__setting__radio-block__radio-input" type="radio" name="tap-type-setting" checked>
+                        Button
+                    </label>
+                    <label class="settings-dialog__setting__radio-block__radio-label reading-text settings-dialog__setting__radio-block__radio-label--not-first">
+                        <input class="settings-dialog__setting__radio-block__radio-input" type="radio" name="tap-type-setting">
+                        Screen
+                    </label>
+                </div>
+                <div class="settings-dialog__setting__divisor"></div>
+            </div>
+            <div class="settings-dialog__setting">
+                <span class="settings-dialog__setting__title settings-dialog__setting__title--not-first reading-text">Decrement button</span>
+                <div class="settings-dialog__setting__radio-block">
+                    <label class="settings-dialog__setting__radio-block__radio-label reading-text">
+                        <input class="settings-dialog__setting__radio-block__radio-input" type="radio" name="decrement-button-setting" checked>
+                        On
+                    </label>
+                    <label class="settings-dialog__setting__radio-block__radio-label reading-text settings-dialog__setting__radio-block__radio-label--not-first">
+                        <input class="settings-dialog__setting__radio-block__radio-input" type="radio" name="decrement-button-setting">
+                        Off
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="settings-dialog__footer">
+            <button class="button button--tertiary settings-dialog__clear-button reading-text">Clear browser save</button>
+            <button class="button button--secondary settings-dialog__back-button reading-text">Back</button>
+        </div>
+    </dialog>
+    <div class="settings-dialog-backdrop"></div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
