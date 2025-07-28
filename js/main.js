@@ -1,7 +1,9 @@
-import { initSettingsDialog } from "./dialogController.js";
-import { initSettings } from "./settingsController.js";
+import { initCounterListeners } from "./controller/counterController.js";
+import { initSettingsDialog } from "./controller/dialogController.js";
+import { initSettings } from "./controller/settingsController.js";
 
 document.addEventListener('DOMContentLoaded', () => {
+    initCounterListeners();
     initSettingsDialog();
     initSettings();
 });
