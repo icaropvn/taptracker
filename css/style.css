@@ -147,13 +147,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     margin: 20px;
 }
 
 .settings__icon {
-    width: 30px;
+    width: 25px;
     transform: rotate(10deg);
 }
 
@@ -166,9 +166,14 @@ body {
 }
 
 .counter__screen-tap-message {
+    display: none;
     font-size: 20px;
     color: var(--color-low-opacity-text);
     margin-bottom: 45px;
+}
+
+.counter__screen-tap-message--active {
+    display: block;
 }
 
 .reading-text {
@@ -198,19 +203,28 @@ body {
 }
 
 .counter__button {
+    display: none;
     width: 200px;
     padding: 14px;
     font-size: 18px;
 }
 
+.counter__button--active {
+    display: block;
+}
+
 /* Actions block */
 
 .actions__decrement-button {
-    display: block;
+    display: none;
     margin: 0 auto 25px auto;
-    width: 190px;
+    width: 160px;
     padding: 12px;
     font-size: 18px;
+}
+
+.actions__decrement-button--active {
+    display: block;
 }
 
 .button--quaternary {
@@ -228,7 +242,7 @@ body {
 
 .actions__reset-button {
     flex: 0 0 auto;
-    width: 160px;
+    width: 140px;
     height: fit-content;
     padding: 12px;
     font-size: 18px;
@@ -242,7 +256,7 @@ body {
 
 .actions__save-button {
     flex: 0 0 auto;
-    width: 160px;
+    width: 140px;
     height: fit-content;
     padding: 12px;
     font-size: 18px;

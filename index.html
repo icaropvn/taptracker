@@ -22,10 +22,10 @@
         <div class="counter">
             <span class="counter__screen-tap-message reading-text low-opacity-text">Tap anywhere to count</span>
             <span class="counter__amount counter-text contrast-text">0</span>
-            <button class="button button--primary counter__button reading-text">Count</button>
+            <button class="button button--primary counter__button counter__button--active reading-text">Count</button>
         </div>
         <div class="actions">
-            <button class="button actions__decrement-button button--quaternary reading-text">Decrement</button>
+            <button class="button actions__decrement-button actions__decrement-button--active button--quaternary reading-text">Decrement</button>
             <div class="actions__bottom-line">
                 <button class="button actions__reset-button button--tertiary reading-text">Reset</button>
                 <button class="button actions__save-button button--secondary reading-text">Save</button>
@@ -56,18 +56,18 @@
             </div>
             <div class="settings-dialog__setting">
                 <span class="settings-dialog__setting__title settings-dialog__setting__title--not-first reading-text">Increment per tap</span>
-                <input type="number" class="settings-dialog__setting__number-input reading-text" value="1">
+                <input type="text" class="settings-dialog__setting__number-input reading-text" value="1" inputmode="numeric" pattern="[0-9]+">
                 <div class="settings-dialog__setting__divisor"></div>
             </div>
             <div class="settings-dialog__setting">
                 <span class="settings-dialog__setting__title settings-dialog__setting__title--not-first reading-text">Tap type</span>
                 <div class="settings-dialog__setting__radio-block">
                     <label class="settings-dialog__setting__radio-block__radio-label reading-text">
-                        <input class="settings-dialog__setting__radio-block__radio-input" type="radio" name="tap-type-setting" checked>
+                        <input class="settings-dialog__setting__radio-block__radio-input" type="radio" name="tap-type-setting" value="button" checked>
                         Button
                     </label>
                     <label class="settings-dialog__setting__radio-block__radio-label reading-text settings-dialog__setting__radio-block__radio-label--not-first">
-                        <input class="settings-dialog__setting__radio-block__radio-input" type="radio" name="tap-type-setting">
+                        <input class="settings-dialog__setting__radio-block__radio-input" type="radio" name="tap-type-setting" value="screen">
                         Screen
                     </label>
                 </div>
@@ -77,11 +77,11 @@
                 <span class="settings-dialog__setting__title settings-dialog__setting__title--not-first reading-text">Decrement button</span>
                 <div class="settings-dialog__setting__radio-block">
                     <label class="settings-dialog__setting__radio-block__radio-label reading-text">
-                        <input class="settings-dialog__setting__radio-block__radio-input" type="radio" name="decrement-button-setting" checked>
+                        <input class="settings-dialog__setting__radio-block__radio-input" type="radio" name="decrement-button-setting" value="on" checked>
                         On
                     </label>
                     <label class="settings-dialog__setting__radio-block__radio-label reading-text settings-dialog__setting__radio-block__radio-label--not-first">
-                        <input class="settings-dialog__setting__radio-block__radio-input" type="radio" name="decrement-button-setting">
+                        <input class="settings-dialog__setting__radio-block__radio-input" type="radio" name="decrement-button-setting" value="off">
                         Off
                     </label>
                 </div>
