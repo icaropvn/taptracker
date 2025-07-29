@@ -5,11 +5,13 @@ import { setAmountInterface, setThemeInterface, setIncrementPerTapInterface, set
 const amountDisplay = document.querySelector('.counter__amount');
 
 function initCounterListeners() {
+    const screenTapListener = document.querySelector('.main-content__screen-tap-listener');
     const counterButton = document.querySelector('.counter__button');
     const decrementButton = document.querySelector('.actions__decrement-button');
     const resetButton = document.querySelector('.actions__reset-button');
     const saveButton = document.querySelector('.actions__save-button');
 
+    screenTapListener.addEventListener('click', increment);
     counterButton.addEventListener('click', increment);
     decrementButton.addEventListener('click', decrement);
     resetButton.addEventListener('click', reset);

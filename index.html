@@ -14,21 +14,22 @@
         <img class="header__logo" src="assets/images/taptracker-logo.png" alt="Taptracker logo">
     </header>
     <main class="main-content">
+        <div class="main-content__screen-tap-listener"></div>
         <div class="settings">
             <button class="button button--secondary settings__button">
-                <img class="settings__icon" src="assets/images/settings-icon.png" alt="Gear icon">
+                <svg class="settings__icon" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="152.7706"  viewBox="0 0 40.4206 42.3333"><path d="M17.0146 0c-1.0139 0-1.8806.7167-2.0753 1.7115l-.707 3.6298c-1.7372.657-3.3436 1.5747-4.7542 2.7326L5.9972 6.875c-.9589-.3302-2.0138.0663-2.5218.9426L.2838 13.349c-.5058.8785-.3217 1.9936.4424 2.6583l2.7905 2.4267c-.1451.8919-.2398 1.7998-.2398 2.7327 0 .9328.0947 1.8407.2398 2.7326L.7262 26.326c-.7641.6647-.9482 1.7798-.4424 2.6583l3.1916 5.5314c.5059.8784 1.563 1.2748 2.5218.9467l3.481-1.1989c1.41 1.1572 3.0177 2.072 4.7542 2.7285l.7069 3.6298c.1947.9948 1.0614 1.7115 2.0753 1.7115h6.3914c1.0138 0 1.8805-.7167 2.0753-1.7115l.707-3.6298c1.7372-.6569 3.3436-1.5747 4.7541-2.7326l3.481 1.1989a2.1148 2.1148 0 0 0 2.5218-.9426l3.1915-5.5356c.506-.8784.3218-1.9894-.4423-2.654l-2.7906-2.4268c.1452-.8919.2398-1.7998.2398-2.7326 0-.9329-.0947-1.8408-.2398-2.7327l2.7906-2.4267c.764-.6647.9482-1.7798.4423-2.6583l-3.1915-5.5314c-.5059-.8784-1.563-1.2748-2.5218-.9467l-3.481 1.1989c-1.41-1.1572-3.0177-2.0719-4.7542-2.7285l-.707-3.6298C25.2866.7167 24.4199 0 23.406 0zm3.1957 12.7c4.6757 0 8.4667 3.791 8.4667 8.4667 0 4.6757-3.791 8.4666-8.4667 8.4666-4.6757 0-8.4667-3.791-8.4667-8.4666 0-4.6758 3.791-8.4667 8.4667-8.4667z"/></svg>
             </button>
         </div>
         <div class="counter">
-            <span class="counter__screen-tap-message reading-text low-opacity-text">Tap anywhere to count</span>
+            <span class="counter__screen-tap-message low-opacity-text">Tap anywhere to count</span>
             <span class="counter__amount counter-text contrast-text">0</span>
-            <button class="button button--primary counter__button counter__button--active reading-text">Count</button>
+            <button class="button button--primary button-text counter__button counter__button--active">Count</button>
         </div>
         <div class="actions">
-            <button class="button actions__decrement-button actions__decrement-button--active button--quaternary reading-text">Decrement</button>
+            <button class="button button-text actions__decrement-button actions__decrement-button--active button--quaternary">Decrement</button>
             <div class="actions__bottom-line">
-                <button class="button actions__reset-button button--tertiary reading-text">Reset</button>
-                <button class="button actions__save-button button--secondary reading-text">Save</button>
+                <button class="button button-text actions__reset-button button--tertiary">Reset</button>
+                <button class="button button-text actions__save-button button--secondary">Save</button>
             </div>
         </div>
     </main>
@@ -88,8 +89,8 @@
             </div>
         </div>
         <div class="settings-dialog__footer">
-            <button class="button button--tertiary settings-dialog__clear-button reading-text">Clear browser save</button>
-            <button class="button button--secondary settings-dialog__back-button reading-text">Back</button>
+            <button class="button button--tertiary button-text settings-dialog__clear-button">Clear browser save</button>
+            <button class="button button--secondary button-text settings-dialog__back-button">Back</button>
         </div>
     </dialog>
     <div class="settings-dialog-backdrop"></div>

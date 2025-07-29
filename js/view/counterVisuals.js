@@ -16,10 +16,12 @@ function setIncrementPerTapInterface(incrementPerTap) {
 }
 
 function setTapTypeInterface(tapType) {
+    const screenTapListener = document.querySelector('.main-content__screen-tap-listener');
     const screenTapMessage = document.querySelector('.counter__screen-tap-message');
     const counterButton = document.querySelector('.counter__button');
     let radioInput = document.querySelector(`input[name="tap-type-setting"][value="${tapType}"]`);
 
+    screenTapListener.classList.toggle('main-content__screen-tap-listener--active', tapType === 'screen');
     screenTapMessage.classList.toggle('counter__screen-tap-message--active', tapType === 'screen');
     counterButton.classList.toggle('counter__button--active', tapType === 'button');
     radioInput.checked = true;
