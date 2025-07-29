@@ -198,10 +198,15 @@ body {
     margin: 20px;
 }
 
+.settings__button:hover .settings__icon {
+    transform: rotate(45deg);
+}
+
 .settings__icon {
     width: 25px;
     transform: rotate(10deg);
     fill: var(--color-primary-button-text);
+    transition: transform 0.1s ease-out;
 }
 
 /* Counter block */

@@ -1,5 +1,5 @@
 import { settingsService } from "../service/settingsService.js";
-import { setAmount, setTheme, setIncrementPerTap, setTapType, setDecrementButton, printCounter } from "../controller/counterController.js";
+import { setAmount, setTheme, setIncrementPerTap, setTapType, setDecrementButton } from "../controller/counterController.js";
 import { initVerificationListeners } from "../util/numericInputVerification.js";
 
 export function initSettings() {
