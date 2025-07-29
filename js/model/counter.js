@@ -9,7 +9,7 @@ export const counter = {
         return this.currentAmount;
     },
     setCurrentAmount(currentAmount) {
-        this.currentAmount = currentAmount;
+        this.currentAmount = Number.parseInt(currentAmount);
     },
 
     getTheme() {
@@ -23,7 +23,7 @@ export const counter = {
         return this.incrementPerTap;
     },
     setIncrementPerTap(incrementPerTap) {
-        this.incrementPerTap = incrementPerTap;
+        this.incrementPerTap = Number.parseInt(incrementPerTap);
     },
 
     getTapType() {
