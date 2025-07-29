@@ -41,10 +41,12 @@
 
     --color-background: #FFFFFF;
     --color-text: #272727;
-    --color-low-opacity-text: #a3a3a3;
+    --color-low-opacity-text: #A3A3A3;
+    --color-close-dialog-icon: #D1D1D1;
     --color-input: #E4E4E4;
     --color-active-input: #8C5BFF;
     --color-settings-divisor: #BEBEBE;
+    --color-notification-background: #FFFFFF;
 
     --color-primary-button-background: #C3A9FF;
     --color-primary-button-extrusion: #917DBE;
@@ -74,9 +76,11 @@
     --color-background: #222222;
     --color-text: #e4e4e4;
     --color-low-opacity-text: #505050;
+    --color-close-dialog-icon: #555555;
     --color-input: #2F2F2F;
     --color-active-input: #A781FF;
     --color-settings-divisor: #383838;
+    --color-notification-background: #2C2C2C;
 
     --color-primary-button-background: #6641BA;
     --color-primary-button-extrusion: #4E328E;
@@ -116,6 +120,36 @@ body {
     flex-direction: column;
 }
 
+/* Notifications */
+
+.notification {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 240px;
+    height: fit-content;
+    padding: 15px 30px;
+    border-radius: 10px;
+    background-color: var(--color-notification-background);
+    box-shadow: 0 5px 15px 2px #0000002d;
+    transition: top 0.3s cubic-bezier(0.22, 0.007, 0.005, 1);
+    z-index: 3;
+}
+
+.notification--show {
+    top: 80px;
+}
+
+.notification__text {
+    display: block;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 14px;
+    color: var(--color-text);
+    width: 100%;
+    text-align: center;
+}
+
 /* Header */
 
 .header {
@@ -149,11 +183,23 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
     z-index: 0;
 }
 
 .main-content__screen-tap-listener--active {
     display: block;
+}
+
+.main-content__screen-tap-listener__click-ripple {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #b15eff6c;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0);
+    animation: click-ripple-animation 0.4s cubic-bezier(0.132, 0, 0, 1), click-ripple-opacity-animation 0.8s ease-out;
 }
 
 /* Settings block */
@@ -327,24 +373,33 @@ body {
 /* Settings dialog */
 
 .settings-dialog {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     background-color: var(--color-background);
     color: var(--color-text);
     height: 80vh;
     width: 100vw;
     max-width: none;
-    margin-top: 57px;
+    top: 57px;
     border: none;
     position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-80vh);
+    transition: transform 0.3s cubic-bezier(0.22, 0.007, 0.005, 1),
+                opacity 0.2s ease-out;;
     z-index: 3;
 }
 
-.settings-dialog:not([open]) {
-    display: none;
+.settings-dialog[open] {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .settings-dialog__header {
+    display: flex;
+    justify-content: space-between;
     padding: 40px 20px;
     width: 100%;
 } 
@@ -352,6 +407,19 @@ body {
 .settings-dialog__header__title {
     font-size: 34px;
     font-weight: 700;
+}
+
+.settings-dialog__header__close-icon {
+    fill: var(--color-close-dialog-icon);
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: fill 0.1s ease-out;
+}
+
+.settings-dialog__header__close-icon:hover {
+    fill: var(--color-text);
 }
 
 .settings-dialog__settings {
@@ -451,20 +519,21 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 40px 0;
+    padding: 20px 0 40px 0;
     gap: 25px;
+    box-shadow: 0 -5px 20px 5px #0000001c;
 }
 
 .settings-dialog__clear-button {
     width: fit-content;
-    padding: 12px 30px;
-    font-size: 20px;
+    padding: 10px 40px;
+    font-size: 18px;
 }
 
 .settings-dialog__back-button {
     width: fit-content;
-    padding: 12px 50px;
-    font-size: 20px;
+    padding: 10px 50px;
+    font-size: 18px;
 }
 
 .settings-dialog-backdrop {
@@ -477,3 +546,15 @@ body {
     position: absolute;
     z-index: 2;
 }
+
+@keyframes click-ripple-animation {
+    to {
+        transform: translate(-50%, -50%) scale(5);
+    }
+}
+
+@keyframes click-ripple-opacity-animation {
+    to {
+        opacity: 0;
+    }
+} 

@@ -1,6 +1,7 @@
 import { settingsService } from "../service/settingsService.js";
 import { setAmount, setTheme, setIncrementPerTap, setTapType, setDecrementButton } from "../controller/counterController.js";
 import { initVerificationListeners } from "../util/numericInputVerification.js";
+import { showNotification } from "../view/notificationAnimation.js";
 
 export function initSettings() {
     synchronizeSettings();
@@ -55,5 +56,6 @@ function addSettingsListeners() {
 
     clearSaveButton.addEventListener('click', () => {
         settingsService.clearAll();
+        showNotification('Browser save cleared. Ready to a fresh start.', 6000);
     });
 }

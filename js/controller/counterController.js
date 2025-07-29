@@ -1,6 +1,7 @@
 import { counter } from "../model/counter.js";
 import { settingsService } from "../service/settingsService.js";
 import { setAmountInterface, setThemeInterface, setIncrementPerTapInterface, setTapTypeInterface, setDecrementButtonInterface } from "../view/counterVisuals.js";
+import { showNotification } from "../view/notificationAnimation.js";
 
 const amountDisplay = document.querySelector('.counter__amount');
 
@@ -38,6 +39,7 @@ function reset() {
 
 function save() {
     settingsService.saveAll(counter.getCurrentAmount(), counter.getTheme(), counter.getIncrementPerTap(), counter.getTapType(), counter.getDecrementButton());
+    showNotification('Your counter has been saved. You\'ll return to where you left off.', 6000);
 }
 
 // Counter getters and setters
