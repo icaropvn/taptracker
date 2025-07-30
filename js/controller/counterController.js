@@ -1,6 +1,6 @@
 import { counter } from "../model/counter.js";
 import { settingsService } from "../service/settingsService.js";
-import { setAmountInterface, setThemeInterface, setIncrementPerTapInterface, setTapTypeInterface, setDecrementButtonInterface } from "../view/counterVisuals.js";
+import { setAmountInterface, setThemeInterface, setIncrementPerTapInterface, setTapTypeInterface, setDecrementButtonInterface, setSoundEffectsInterface, setSoundEffectsVolumeInterface } from "../view/counterVisuals.js";
 import { showNotification } from "../view/notificationAnimation.js";
 
 const amountDisplay = document.querySelector('.counter__amount');
@@ -38,7 +38,7 @@ function reset() {
 }
 
 function save() {
-    settingsService.saveAll(counter.getCurrentAmount(), counter.getTheme(), counter.getIncrementPerTap(), counter.getTapType(), counter.getDecrementButton());
+    settingsService.saveAll(counter.getCurrentAmount(), counter.getTheme(), counter.getIncrementPerTap(), counter.getTapType(), counter.getDecrementButton(), counter.getSoundEffects(), counter.getSoundEffectsVolume());
     showNotification('Your counter has been saved. You\'ll return to where you left off.', 6000);
 }
 
@@ -80,8 +80,30 @@ function getDecrementButton() {
     return counter.getDecrementButton();
 }
 function setDecrementButton(decrementButtonOn) {
+    if(decrementButtonOn !== true && decrementButtonOn !== false)
+        decrementButtonOn = decrementButtonOn === 'true';
+
     counter.setDecrementButton(decrementButtonOn);
     setDecrementButtonInterface(decrementButtonOn);
 }
 
-export { initCounterListeners, getAmount, setAmount, getTheme, setTheme, getIncrementPerTap, setIncrementPerTap, getTapType, setTapType, getDecrementButton, setDecrementButton };
+function getSoundEffects() {
+    return counter.getSoundEffects();
+}
+function setSoundEffects(soundEffectsOn) {
+    if(soundEffectsOn !== true && soundEffectsOn !== false)
+        soundEffectsOn = soundEffectsOn === 'true';
+
+    counter.setSoundEffects(soundEffectsOn);
+    setSoundEffectsInterface(soundEffectsOn);
+}
+
+function getSoundEffectsVolume() {
+    return counter.getSoundEffectsVolume();
+}
+function setSoundEffectsVolume(soundEffectsVolume) {
+    counter.setSoundEffectsVolume(soundEffectsVolume);
+    setSoundEffectsVolumeInterface(soundEffectsVolume, counter.getSoundEffects());
+}
+
+export { initCounterListeners, getAmount, setAmount, getTheme, setTheme, getIncrementPerTap, setIncrementPerTap, getTapType, setTapType, getDecrementButton, setDecrementButton, getSoundEffects, setSoundEffects, getSoundEffectsVolume, setSoundEffectsVolume };

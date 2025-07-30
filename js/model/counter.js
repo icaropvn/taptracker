@@ -4,6 +4,8 @@ export const counter = {
     incrementPerTap: 1,
     tapType: 'button',
     decrementButton: true,
+    soundEffects: true,
+    soundEffectsVolume: 50,
 
     getCurrentAmount() {
         return this.currentAmount;
@@ -38,5 +40,19 @@ export const counter = {
     },
     setDecrementButton(decrementButtonOn) {
         this.decrementButton = decrementButtonOn;
+    },
+
+    getSoundEffects() {
+        return this.soundEffects;
+    },
+    setSoundEffects(soundEffectsOn) {
+        this.soundEffects = soundEffectsOn;
+    },
+
+    getSoundEffectsVolume() {
+        return this.soundEffectsVolume;
+    },
+    setSoundEffectsVolume(soundEffectsVolume) {
+        this.soundEffectsVolume = Number.parseInt(soundEffectsVolume);
     }
 }

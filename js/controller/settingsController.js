@@ -1,6 +1,7 @@
 import { settingsService } from "../service/settingsService.js";
-import { setAmount, setTheme, setIncrementPerTap, setTapType, setDecrementButton } from "../controller/counterController.js";
+import { setAmount, setTheme, setIncrementPerTap, setTapType, setDecrementButton, setSoundEffects, setSoundEffectsVolume } from "../controller/counterController.js";
 import { initVerificationListeners } from "../util/numericInputVerification.js";
+import { initVolumeListener } from "../util/volumeSliderBehavior.js";
 import { showNotification } from "../view/notificationAnimation.js";
 
 export function initSettings() {
@@ -16,7 +17,9 @@ function synchronizeSettings() {
     setTheme(settingsService.getTheme());
     setIncrementPerTap(settingsService.getIncrementPerTap());
     setTapType(settingsService.getTapType());
-    setDecrementButton(settingsService.getDecrementButton() === 'true');
+    setDecrementButton(settingsService.getDecrementButton());
+    setSoundEffects(settingsService.getSoundEffects());
+    setSoundEffectsVolume(settingsService.getSoundEffectsVolume());
 }
 
 function addSettingsListeners() {
@@ -25,8 +28,11 @@ function addSettingsListeners() {
     const incrementPerTapInput = settingsDialog.querySelector('.settings-dialog__setting__number-input');
     const tapTypeRadios = settingsDialog.querySelectorAll('input[name="tap-type-setting"]');
     const decrementButtonRadios = settingsDialog.querySelectorAll('input[name="decrement-button-setting"]');
+    const soundEffectsRadios = settingsDialog.querySelectorAll('input[name="sound-effects-setting"]');
+    const soundEffectsVolumeSlider = settingsDialog.querySelector('.settings-dialog__setting__volume-block__volume-slider');
     const clearSaveButton = settingsDialog.querySelector('.settings-dialog__clear-button');
 
+    initVolumeListener();
     initVerificationListeners(incrementPerTapInput);
 
     themeRadios.forEach(radio => {
@@ -52,6 +58,16 @@ function addSettingsListeners() {
         radio.addEventListener('change', () => {
             setDecrementButton(radio.value === 'on' ? true : false);
         });
+    });
+
+    soundEffectsRadios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            setSoundEffects(radio.value === 'on' ? true : false);
+        });
+    });
+
+    soundEffectsVolumeSlider.addEventListener('input', () => {
+        setSoundEffectsVolume(soundEffectsVolumeSlider.value);
     });
 
     clearSaveButton.addEventListener('click', () => {

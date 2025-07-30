@@ -1,6 +1,6 @@
 export const settingsService = {
     getAmount() {
-        return localStorage.getItem('Taptracker:amount') || 0
+        return localStorage.getItem('Taptracker:amount') || '0'
     },
     setAmount(amount) {
         localStorage.setItem('Taptracker:amount', amount);
@@ -28,18 +28,34 @@ export const settingsService = {
     },
 
     getDecrementButton() {
-        return localStorage.getItem('Taptracker:decrementButton') || 'on';
+        return localStorage.getItem('Taptracker:decrementButton') || 'true';
     },
     setDecrementButton(decrementButton) {
         localStorage.setItem('Taptracker:decrementButton', decrementButton);
     },
 
-    saveAll(amount, theme, incrementPerTap, tapType, decrementButton) {
+    getSoundEffects() {
+        return localStorage.getItem('Taptracker:soundEffects') || 'true';
+    },
+    setSoundEffects(soundEffects) {
+        localStorage.setItem('Taptracker:soundEffects', soundEffects);
+    },
+
+    getSoundEffectsVolume() {
+        return localStorage.getItem('Taptracker:soundEffectsVolume') || '50';
+    },
+    setSoundEffectsVolume(soundEffectsVolume) {
+        localStorage.setItem('Taptracker:soundEffectsVolume', soundEffectsVolume);
+    },
+
+    saveAll(amount, theme, incrementPerTap, tapType, decrementButton, soundEffects, soundEffectsVolume) {
         this.setAmount(amount);
         this.setTheme(theme);
         this.setIncrementPerTap(incrementPerTap);
         this.setTapType(tapType);
         this.setDecrementButton(decrementButton);
+        this.setSoundEffects(soundEffects);
+        this.setSoundEffectsVolume(soundEffectsVolume);
     },
     clearAll() {
         localStorage.removeItem('Taptracker:amount');
@@ -47,8 +63,10 @@ export const settingsService = {
         localStorage.removeItem('Taptracker:incrementPerTap');
         localStorage.removeItem('Taptracker:tapType');
         localStorage.removeItem('Taptracker:decrementButton');
+        localStorage.removeItem('Taptracker:soundEffects');
+        localStorage.removeItem('Taptracker:soundEffectsVolume');
     },
     isThereSave() {
-        return (localStorage.getItem('Taptracker:amount') !== null && localStorage.getItem('Taptracker:theme') !== null && localStorage.getItem('Taptracker:incrementPerTap') !== null && localStorage.getItem('Taptracker:tapType') !== null && localStorage.getItem('Taptracker:decrementButton') !== null);
+        return (localStorage.getItem('Taptracker:amount') !== null && localStorage.getItem('Taptracker:theme') !== null && localStorage.getItem('Taptracker:incrementPerTap') !== null && localStorage.getItem('Taptracker:tapType') !== null && localStorage.getItem('Taptracker:decrementButton') !== null && localStorage.getItem('Taptracker:soundEffects') !== null && localStorage.getItem('Taptracker:soundEffectsVolume') !== null);
     }
 }

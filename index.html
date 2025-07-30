@@ -10,10 +10,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- <div class="notification notification--show">
-        <span class="notification__text">Your counter has been saved. You’ll return to where you left off.</span>
-    </div> -->
-
     <header class="header">
         <img class="header__logo" src="assets/images/taptracker-logo.png" alt="Taptracker logo">
     </header>
@@ -89,6 +85,25 @@
                         <input class="settings-dialog__setting__radio-block__radio-input" type="radio" name="decrement-button-setting" value="off">
                         Off
                     </label>
+                </div>
+                <div class="settings-dialog__setting__divisor"></div>
+            </div>
+            <div class="settings-dialog__setting">
+                <span class="settings-dialog__setting__title settings-dialog__setting__title--not-first reading-text">Sound effects</span>
+                <div class="settings-dialog__setting__radio-block">
+                    <label class="settings-dialog__setting__radio-block__radio-label reading-text">
+                        <input class="settings-dialog__setting__radio-block__radio-input" type="radio" name="sound-effects-setting" value="on" checked>
+                        On
+                    </label>
+                    <label class="settings-dialog__setting__radio-block__radio-label reading-text settings-dialog__setting__radio-block__radio-label--not-first">
+                        <input class="settings-dialog__setting__radio-block__radio-input" type="radio" name="sound-effects-setting" value="off">
+                        Off
+                    </label>
+                </div>
+                <div class="settings-dialog__setting__volume-block">
+                    <span class="settings-dialog__setting__volume-block__title reading-text">Volume:</span>
+                    <input class="settings-dialog__setting__volume-block__volume-slider" type="range" min="0" max="100" value="50">
+                    <output class="settings-dialog__setting__volume-block__volume-output reading-text">50%</output>
                 </div>
             </div>
         </div>
