@@ -36,8 +36,33 @@ export function initAudioListeners() {
         });
     });
 
+    buttons.forEach(button => {
+        button.addEventListener('touchstart', trigger => {
+            if(!getSoundEffects())
+                return;
+
+            playButtonPressSound();
+            const touchId = trigger.pointerId;
+
+            const releaseHandler = evt => {
+                if(evt.pointerId === touchId) {
+                    playButtonReleaseSound();
+
+                    document.removeEventListener('touchend', releaseHandler);
+                }
+            };
+
+            document.addEventListener('touchend', releaseHandler);
+        });
+    });
 
     screenTapContainer.addEventListener('pointerdown', () => {
+        if(!getSoundEffects())
+                return;
+        playTapSound();
+    });
+
+    screenTapContainer.addEventListener('touchstart', () => {
         if(!getSoundEffects())
                 return;
         playTapSound();
