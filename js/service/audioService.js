@@ -1,6 +1,18 @@
-const buttonPressSound = new Audio('../../sounds/press-button-sound.mp3');
-const buttonReleaseSound = new Audio('../../sounds/release-button-sound.mp3');
-const tapSound = new Audio('../../sounds/tap-sound.mp3');
+// Dev mode area
+const devMode = false; // change this value to swap dev mode
+const pathSufix = '';
+
+if(devMode)
+    pathSufix = '../../';
+// ----------------------------
+
+const buttonPressSound = new Audio(`${pathSufix}sounds/press-button-sound.mp3`);
+const buttonReleaseSound = new Audio(`${pathSufix}sounds/release-button-sound.mp3`);
+const tapSound = new Audio(`${pathSufix}sounds/tap-sound.mp3`);
+
+buttonPressSound.preload = 'auto';
+buttonReleaseSound.preload = 'auto';
+tapSound.preload = 'auto';
 
 function setAudioVolume(volume) {
     volume /= 100;
