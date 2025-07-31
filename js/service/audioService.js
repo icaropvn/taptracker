@@ -1,0 +1,33 @@
+const buttonPressSound = new Audio('../../sounds/press-button-sound.mp3');
+const buttonReleaseSound = new Audio('../../sounds/release-button-sound.mp3');
+const tapSound = new Audio('../../sounds/tap-sound.mp3');
+
+function setAudioVolume(volume) {
+    volume /= 100;
+    buttonPressSound.volume = volume;
+    buttonReleaseSound.volume = volume;
+    tapSound.volume = volume;
+}
+
+function playButtonPressSound() {
+    const buttonPressSoundAux = buttonPressSound.cloneNode();
+    buttonPressSoundAux.volume = buttonPressSound.volume;
+    buttonPressSoundAux.currentTime = 0;
+    buttonPressSoundAux.play();
+}
+
+function playButtonReleaseSound() {
+    const buttonReleaseSoundAux = buttonReleaseSound.cloneNode();
+    buttonReleaseSoundAux.volume = buttonReleaseSound.volume;
+    buttonReleaseSoundAux.currentTime = 0;
+    buttonReleaseSoundAux.play();
+}
+
+function playTapSound() {
+    const tapSoundAux = tapSound.cloneNode();
+    tapSoundAux.volume = tapSound.volume;
+    tapSoundAux.currentTime = 0;
+    tapSoundAux.play();
+}
+
+export { setAudioVolume, playButtonPressSound, playButtonReleaseSound, playTapSound }

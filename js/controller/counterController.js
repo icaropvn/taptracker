@@ -2,6 +2,7 @@ import { counter } from "../model/counter.js";
 import { settingsService } from "../service/settingsService.js";
 import { setAmountInterface, setThemeInterface, setIncrementPerTapInterface, setTapTypeInterface, setDecrementButtonInterface, setSoundEffectsInterface, setSoundEffectsVolumeInterface } from "../view/counterVisuals.js";
 import { showNotification } from "../view/notificationAnimation.js";
+import { setAudioVolume } from "../service/audioService.js";
 
 const amountDisplay = document.querySelector('.counter__amount');
 
@@ -27,8 +28,7 @@ function increment() {
 function decrement() {
     if(counter.getCurrentAmount() > 0)
         counter.setCurrentAmount(counter.getCurrentAmount() - 1);
-
-    console.log(counter.getCurrentAmount());
+    
     amountDisplay.textContent = counter.getCurrentAmount();
 }
 
@@ -104,6 +104,7 @@ function getSoundEffectsVolume() {
 function setSoundEffectsVolume(soundEffectsVolume) {
     counter.setSoundEffectsVolume(soundEffectsVolume);
     setSoundEffectsVolumeInterface(soundEffectsVolume, counter.getSoundEffects());
+    setAudioVolume(Number.parseInt(soundEffectsVolume));
 }
 
 export { initCounterListeners, getAmount, setAmount, getTheme, setTheme, getIncrementPerTap, setIncrementPerTap, getTapType, setTapType, getDecrementButton, setDecrementButton, getSoundEffects, setSoundEffects, getSoundEffectsVolume, setSoundEffectsVolume };

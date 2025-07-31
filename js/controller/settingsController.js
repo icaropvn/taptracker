@@ -3,6 +3,7 @@ import { setAmount, setTheme, setIncrementPerTap, setTapType, setDecrementButton
 import { initVerificationListeners } from "../util/numericInputVerification.js";
 import { initVolumeListener } from "../util/volumeSliderBehavior.js";
 import { showNotification } from "../view/notificationAnimation.js";
+import { setAudioVolume } from "../service/audioService.js";
 
 export function initSettings() {
     synchronizeSettings();
