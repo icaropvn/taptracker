@@ -3,6 +3,7 @@ import { settingsService } from "../service/settingsService.js";
 import { setAmountInterface, setThemeInterface, setIncrementPerTapInterface, setTapTypeInterface, setDecrementButtonInterface, setSoundEffectsInterface, setSoundEffectsVolumeInterface } from "../view/counterVisuals.js";
 import { showNotification } from "../view/notificationAnimation.js";
 import { setAudioVolume } from "../service/audioService.js";
+import { textSizer } from "../util/textSizer.js";
 
 const amountDisplay = document.querySelector('.counter__amount');
 
@@ -23,18 +24,21 @@ function initCounterListeners() {
 function increment() {
     counter.setCurrentAmount(counter.getCurrentAmount() + counter.getIncrementPerTap());
     amountDisplay.textContent = counter.getCurrentAmount();
+    textSizer.fitTextIncrement();
 }
 
 function decrement() {
     if(counter.getCurrentAmount() > 0)
-        counter.setCurrentAmount(counter.getCurrentAmount() - 1);
+        counter.setCurrentAmount(counter.getCurrentAmount() - 10);
     
     amountDisplay.textContent = counter.getCurrentAmount();
+    textSizer.fitTextDecrement();
 }
 
 function reset() {
     counter.setCurrentAmount(0);
     amountDisplay.textContent = counter.getCurrentAmount();
+    textSizer.resetTextSize();
 }
 
 function save() {
@@ -50,6 +54,7 @@ function getAmount() {
 function setAmount(currentAmount) {
     counter.setCurrentAmount(currentAmount);
     setAmountInterface(currentAmount);
+    textSizer.fitTextIncrement();
 }
 
 function getTheme() {

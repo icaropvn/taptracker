@@ -47,6 +47,8 @@
     --color-active-input: #8C5BFF;
     --color-settings-divisor: #BEBEBE;
     --color-notification-background: #FFFFFF;
+    --color-scrollbar: #9C9C9C;
+    --color-scrollbar-hover: #6e6e6e;
 
     --color-primary-button-background: #C3A9FF;
     --color-primary-button-extrusion: #917DBE;
@@ -88,6 +90,8 @@
     --color-active-input: #A781FF;
     --color-settings-divisor: #383838;
     --color-notification-background: #2C2C2C;
+    --color-scrollbar: #454545;
+    --color-scrollbar-hover: #777777;
 
     --color-primary-button-background: #6641BA;
     --color-primary-button-extrusion: #4E328E;
@@ -121,12 +125,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
 }
 
 html, body {
     background-color: var(--color-background);
     width: 100vw;
     height: 100vh;
+    transition: background-color 0.1s ease-out
 }
 
 body {
@@ -171,6 +179,7 @@ body {
     padding: 16px 0;
     position: relative;
     z-index: 4;
+    transition: background-color 0.1s ease-out;
 }
 
 .header__logo {
@@ -228,7 +237,9 @@ body {
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.1s ease-out,
-                box-shadow 0.1s ease-out;
+                box-shadow 0.1s ease-out,
+                background-color 0.1s ease-out,
+                color 0.1s ease-out;
 }
 
 .button:active {
@@ -275,6 +286,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin: 0 40px;
 }
 
 .counter__screen-tap-message {
@@ -401,7 +413,9 @@ body {
     pointer-events: none;
     transform: translateY(-80vh);
     transition: transform 0.3s cubic-bezier(0.22, 0.007, 0.005, 1),
-                opacity 0.2s ease-out;;
+                opacity 0.2s ease-out,
+                background-color 0.1s ease-out,
+                color 0.1s ease-out;
     z-index: 3;
 }
 
@@ -440,6 +454,32 @@ body {
     flex: 1 1 auto;
     overflow-y: auto;
     padding: 0 20px 40px 20px;
+    scroll-behavior: smooth;
+}
+
+.settings-dialog__settings::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
+}
+
+.settings-dialog__settings::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.settings-dialog__settings::-webkit-scrollbar-thumb {
+    background-color: var(--color-scrollbar);
+    border-radius: 10px;
+    border: 5px solid transparent;
+    background-clip: content-box;
+    transition: background-color 0.1s ease-out;
+}
+
+.settings-dialog__settings::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-scrollbar-hover);
+}
+
+.settings-dialog__settings::-webkit-scrollbar-button {
+    display: none;
 }
 
 .settings-dialog__setting__title {
@@ -466,6 +506,7 @@ body {
     background-color: var(--color-input);
     border-radius: 50%;
     cursor: pointer;
+    transition: background-color 0.1s ease-out;
 }
 
 .settings-dialog__setting__radio-block__radio-input::before {
@@ -484,6 +525,7 @@ body {
 
 .settings-dialog__setting__radio-block__radio-input:checked::before {
     background-color: var(--color-active-input);
+    transition: background-color 0.1s ease-out;
 }
 
 .settings-dialog__setting__radio-block__radio-label {
@@ -521,6 +563,7 @@ body {
     padding: 4px 10px;
     margin-top: 16px;
     font-size: 16px;
+    transition: background-color 0.1s ease-out;
 }
 
 .settings-dialog__setting__number-input:focus {
@@ -543,6 +586,7 @@ body {
     border-radius: 5px;
     background-color: var(--color-input);
     background: linear-gradient(90deg, var(--color-audio-slider-track-on) 50%, var(--color-audio-slider-background-on) 50%);
+    transition: background-color 0.1s ease-out;
 }
 
 .settings-dialog__setting__volume-block__volume-slider--off {
