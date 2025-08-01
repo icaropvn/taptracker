@@ -4,6 +4,7 @@ import { setAmountInterface, setThemeInterface, setIncrementPerTapInterface, set
 import { showNotification } from "../view/notificationAnimation.js";
 import { setAudioVolume } from "../service/audioService.js";
 import { textSizer } from "../util/textSizer.js";
+import { setThemeUiElements } from "../view/mobileThemeAdapter.js";
 
 const amountDisplay = document.querySelector('.counter__amount');
 
@@ -63,6 +64,7 @@ function getTheme() {
 function setTheme(theme) {
     counter.setTheme(theme);
     setThemeInterface(theme);
+    setThemeUiElements(theme === 'dark');
 }
 
 function getIncrementPerTap() {
