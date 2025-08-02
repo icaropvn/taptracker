@@ -52,6 +52,7 @@
     --color-notification-background: #FFFFFF;
     --color-scrollbar: #9C9C9C;
     --color-scrollbar-hover: #6e6e6e;
+    --color-aside-text: #A7A7A7;
 
     --color-primary-button-background: #C3A9FF;
     --color-primary-button-extrusion: #917DBE;
@@ -95,6 +96,7 @@
     --color-notification-background: #2C2C2C;
     --color-scrollbar: #454545;
     --color-scrollbar-hover: #777777;
+    --color-aside-text: #575757;
 
     --color-primary-button-background: #6641BA;
     --color-primary-button-extrusion: #4E328E;
@@ -371,7 +373,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin: 0 auto 40px auto;
+    margin: 0 auto;
 }
 
 .actions__reset-button {
@@ -398,6 +400,28 @@ body {
     font-size: 18px;
     position: relative;
     z-index: 1;
+}
+
+/* Footer */
+
+.actions__credits {
+    display: block;
+    text-align: center;
+    margin: 20px 0 15px 0;
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--color-aside-text);
+}
+
+.actions__credits__link {
+    text-underline-offset: 2px;
+    font-weight: 500;
+    color: var(--color-aside-text);
+}
+
+.actions__credits__link:hover {
+    color: var(--color-active-input);
 }
 
 /* Settings dialog */
@@ -669,13 +693,16 @@ body {
 
 .settings-dialog__footer {
     flex: 0 0 auto;
+    width: 100%;
+    padding-top: 20px;
+    box-shadow: 0 -5px 20px 5px #0000001c;
+}
+
+.settings-dialog__footer__buttons-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    padding: 20px 0 40px 0;
-    gap: 25px;
-    box-shadow: 0 -5px 20px 5px #0000001c;
+    gap: 20px;
 }
 
 .settings-dialog__clear-button {
@@ -688,6 +715,19 @@ body {
     width: fit-content;
     padding: 10px 50px;
     font-size: 18px;
+}
+
+.settings-dialog__footer__version-line {
+    width: 100%;
+    padding: 5px 10px 10px 10px;
+}
+
+.settings-dialog__footer__version {
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--color-aside-text);
+    transition: color 0.1s ease-out;
 }
 
 .settings-dialog-backdrop {
@@ -711,4 +751,73 @@ body {
     to {
         opacity: 0;
     }
-} 
+}
+
+/* Media query - Huge vertical screens */
+
+@media (orientation: portrait) and (height > 1000px) {
+
+}
+
+/* Media query - Small horizontal screens */
+
+@media (orientation: landscape) and (width < 2000px) {
+    .header {
+        padding: max(0.8vw, 16px) 0;
+    }
+
+    .header__logo {
+        min-height: 25px;
+        height: 1.5vw;
+    }
+
+    .settings__button {
+        min-width: 50px;
+        min-height: 50px;
+        width: 3vw;
+        height: 3vw;
+    }
+
+    .settings__icon {
+        min-width: 25px;
+        width: 1.5vw;
+    }
+
+    .counter__amount {
+        font-size: clamp(140px, 9vw, 9vw);
+    }
+
+    .counter__button {
+        min-width: 200px;
+        width: 12vw;
+        padding: 14px;
+        font-size: clamp(18px, 1.1vw, 2vw);
+    }
+
+    .actions__decrement-button {
+        margin: 0 auto 1.5vw auto;
+        min-width: 160px;
+        width: 10vw;
+        padding: 12px;
+        font-size: clamp(18px, 1.1vw, 2vw);
+    }
+
+    .actions__bottom-line {
+        gap: 1.4vw;
+    }
+
+    .actions__reset-button,
+    .actions__save-button {
+        min-width: 140px;
+        width: 8vw;
+        font-size: clamp(18px, 1.1vw, 2vw);
+        position: relative;
+        z-index: 1;
+    }
+}
+
+/* Media query - Huge horizontal screens */
+
+@media (orientation: landscape) and (width > 2000px) {
+
+}

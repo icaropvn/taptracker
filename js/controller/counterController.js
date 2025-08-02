@@ -30,7 +30,7 @@ function increment() {
 
 function decrement() {
     if(counter.getCurrentAmount() > 0)
-        counter.setCurrentAmount(counter.getCurrentAmount() - 10);
+        counter.setCurrentAmount(counter.getCurrentAmount() - 1);
     
     amountDisplay.textContent = counter.getCurrentAmount();
     textSizer.fitTextDecrement();

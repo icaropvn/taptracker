@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- status bar color Android/Chrome -->
-    <!-- <meta name="theme-color" content="#FFFFFF"> -->
     <meta name="theme-color" content="#FFFFFF">
 
     <!-- iOS PWA -->
@@ -39,6 +38,10 @@
                 <button class="button button-text actions__reset-button button--tertiary">Reset</button>
                 <button class="button button-text actions__save-button button--secondary">Save</button>
             </div>
+            <span class="actions__credits">
+                created with luv by
+                <a href="https://github.com/icaropvn" target="_blank" class="actions__credits__link">Ícaro</a>
+            </span>
         </div>
     </main>
 
@@ -116,8 +119,13 @@
             </div>
         </div>
         <div class="settings-dialog__footer">
-            <button class="button button--tertiary button-text settings-dialog__clear-button">Clear browser save</button>
-            <button class="button button--secondary button-text settings-dialog__back-button">Back</button>
+            <div class="settings-dialog__footer__buttons-container">
+                <button class="button button--tertiary button-text settings-dialog__clear-button">Clear browser save</button>
+                <button class="button button--secondary button-text settings-dialog__back-button">Back</button>
+            </div>
+            <div class="settings-dialog__footer__version-line">
+                <span class="settings-dialog__footer__version">v0.0.0</span>
+            </div>
         </div>
     </dialog>
     <div class="settings-dialog-backdrop"></div>
