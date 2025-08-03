@@ -756,7 +756,200 @@ body {
 /* Media query - Huge vertical screens */
 
 @media screen and (orientation: portrait) and (height > 1000px) {
+    .header {
+        padding: max(1.6vh, 16px) 0;
+    }
 
+    .header__logo {
+        min-height: 25px;
+        height: 3.2vh;
+    }
+
+    .settings__button {
+        min-width: 50px;
+        min-height: 50px;
+        width: 5.5vh;
+        height: 5.5vh;
+        border-radius: max(10px, 1vh);
+    }
+
+    .settings__icon {
+        min-width: 25px;
+        width: 2.75vh;
+    }
+
+    .counter__amount {
+        font-size: clamp(140px, 15vh, 15vh);
+    }
+
+    .counter__button {
+        min-width: 200px;
+        width: 19vh;
+        padding: 1.2vh;
+        font-size: clamp(18px, 1.9vh, 5vh);
+        border-radius: max(10px, 1vh);
+    }
+
+    .actions__decrement-button {
+        margin: 0 auto 2vh auto;
+        min-width: 160px;
+        width: 17vh;
+        padding: 1.2vh;
+        font-size: clamp(18px, 1.9vh, 5vh);
+        border-radius: max(10px, 1vh);
+    }
+
+    .actions__bottom-line {
+        gap: 2vh;
+    }
+
+    .actions__reset-button,
+    .actions__save-button {
+        min-width: 140px;
+        width: 14vh;
+        font-size: clamp(18px, 1.9vh, 5vh);
+        padding: 1.2vh;
+        border-radius: max(10px, 1vh);
+    }
+
+    .actions__credits {
+        font-size: clamp(18px, 1.4vh, 5vh);
+        margin: 2.2vh 0 2vh 0;
+    }
+
+    .settings-dialog__header {
+        padding: 6vh 3vh 3vh 3vh;
+    }
+
+    .settings-dialog__header__title {
+        font-size: 3.3vh;
+    }
+
+    .settings-dialog__header__close-icon {
+        width: 4vh;
+        height: 4vh;
+    }
+
+    .settings-dialog__settings {
+        padding: 0 3vh 5vh 3vh;
+    }
+
+    .settings-dialog__setting__title {
+        font-size: 2vh;
+    }
+
+    .settings-dialog__setting__title--not-first {
+        margin-top: 2.5vh;
+    }
+
+    .settings-dialog__setting__radio-block {
+        margin-top: 1.6vh;
+    }
+
+    .settings-dialog__setting__radio-block__radio-input {
+        width: 1.8vh;
+        height: 1.8vh;
+    }
+
+    .settings-dialog__setting__radio-block__radio-input::before {
+        width: 1vh;
+        height: 1vh;
+    }
+
+    .settings-dialog__setting__radio-block__radio-label {
+        gap: 0.7vh;
+        font-size: 1.7vh;
+    }
+
+    .settings-dialog__setting__radio-block__radio-label--not-first {
+        margin-left: 2vh;
+    }
+
+    .settings-dialog__setting__divisor {
+        margin-top: 2.5vh;
+    }
+
+    .settings-dialog__setting__number-input {
+        width: 12vh;
+        border-radius: max(5px, 0.5vh);
+        padding: 0.4vh 1.2vh;
+        margin-top: 1.6vh;
+        font-size: 1.7vh;
+    }
+
+    .settings-dialog__setting__volume-block {
+        gap: 1.5vh;
+        margin-top: 1.6vh;
+    }
+
+    .settings-dialog__setting__volume-block__title,
+    .settings-dialog__setting__volume-block__volume-output {
+        font-size: 1.5vh;
+    }
+
+    .settings-dialog__setting__volume-block__volume-slider {
+        width: 15vh;
+        height: 0.5vh;
+    }
+
+    .settings-dialog__setting__volume-block__volume-slider::-webkit-slider-runnable-track {
+        height: 0.5vh;
+    }
+
+    .settings-dialog__setting__volume-block__volume-slider::-moz-track {
+        height: 0.5vh;
+    }
+
+    .settings-dialog__setting__volume-block__volume-slider::-ms-track {
+        height: 0.5vh;
+    }
+
+    .settings-dialog__setting__volume-block__volume-slider::-webkit-slider-thumb {
+        height: 1.4vh;
+        width: 1.4vh;
+        margin-top: -0.5vh;
+    }
+
+    .settings-dialog__setting__volume-block__volume-slider::-moz-range-thumb {
+        height: 1.4vh;
+        width: 1.4vh;
+        margin-top: -0.5vh;
+    }
+
+    .settings-dialog__setting__volume-block__volume-slider::-ms-thumb {
+        height: 1.4vh;
+        width: 1.4vh;
+        margin-top: -0.5vh;
+    }
+
+    .settings-dialog__footer {
+        padding-top: 2vh;
+    }
+
+    .settings-dialog__footer__buttons-container {
+        gap: 2.5vh;
+    }
+
+    .settings-dialog__clear-button {
+        padding: 10px 40px;
+        font-size: clamp(18px, 1.9vh, 5vh);
+        border-radius: max(10px, 1vh);
+    }
+
+    .settings-dialog__back-button {
+        width: fit-content;
+        padding: 10px 50px;
+        font-size: clamp(18px, 1.9vh, 5vh);
+        border-radius: max(10px, 1vh);
+    }
+
+    .settings-dialog__footer__version-line {
+        padding: 1vh 1.5vh 1.5vh 1.5vh;
+    }
+
+    .settings-dialog__footer__version {
+        font-size: 1.6vh;
+    }
 }
 
 /* Media query - Small horizontal screens */
@@ -811,8 +1004,6 @@ body {
         min-width: 140px;
         width: 8vw;
         font-size: clamp(18px, 1.1vw, 2vw);
-        position: relative;
-        z-index: 1;
     }
 }
 
