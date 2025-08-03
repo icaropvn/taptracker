@@ -407,11 +407,14 @@ body {
 .actions__credits {
     display: block;
     text-align: center;
-    margin: 20px 0 15px 0;
+    width: fit-content;
+    margin: 20px auto 15px auto;
     font-family: 'Inter', Arial, sans-serif;
     font-weight: 400;
     font-size: 16px;
     color: var(--color-aside-text);
+    position: relative;
+    z-index: 1;
 }
 
 .actions__credits__link {
@@ -954,7 +957,7 @@ body {
 
 /* Media query - Small horizontal screens */
 
-@media screen and (orientation: landscape) and (width < 2000px) {
+@media screen and (orientation: landscape) and (width < 2000px)  {
     .header {
         padding: max(0.8vw, 16px) 0;
     }
@@ -969,6 +972,7 @@ body {
         min-height: 50px;
         width: 3vw;
         height: 3vw;
+        border-radius: max(10px, 0.5vw);
     }
 
     .settings__icon {
@@ -985,14 +989,16 @@ body {
         width: 12vw;
         padding: 14px;
         font-size: clamp(18px, 1.1vw, 2vw);
+        border-radius: max(10px, 0.5vw);
     }
 
     .actions__decrement-button {
         margin: 0 auto 1.5vw auto;
         min-width: 160px;
         width: 10vw;
-        padding: 12px;
+        padding: 14px;
         font-size: clamp(18px, 1.1vw, 2vw);
+        border-radius: max(10px, 0.5vw);
     }
 
     .actions__bottom-line {
@@ -1004,6 +1010,153 @@ body {
         min-width: 140px;
         width: 8vw;
         font-size: clamp(18px, 1.1vw, 2vw);
+        border-radius: max(10px, 0.5vw);
+    }
+
+    .settings-dialog {
+        height: 80vh;
+        width: 40vw;
+        margin: 0 auto;
+        border-bottom-left-radius: max(10px, 1vw);
+        border-bottom-right-radius: max(10px, 1vw);
+    }
+
+    .actions__credits {
+        font-size: clamp(18px, 0.8vw, 0.8vw);
+        margin: 1.5vw auto 1.2vw auto;
+    }
+
+    .settings-dialog__header {
+        padding: 2vw 1.5vw 1.5vw 1.5vw;
+    }
+
+    .settings-dialog__header__title {
+        font-size: clamp(34px, 2vw, 2vw);
+    }
+
+    .settings-dialog__header__close-icon {
+        width: 2vw;
+        height: 2vw;
+    }
+
+    .settings-dialog__settings {
+        padding: 0 1.5vw 2vw 1.5vw;
+    }
+
+    .settings-dialog__setting__title {
+        font-size: clamp(22px, 1vw, 1vw);
+    }
+
+    .settings-dialog__setting__title--not-first {
+        margin-top: 1.2vw;
+    }
+
+    .settings-dialog__setting__radio-block {
+        margin-top: 1vw;
+    }
+
+    .settings-dialog__setting__radio-block__radio-input {
+        width: 1vw;
+        height: 1vw;
+    }
+
+    .settings-dialog__setting__radio-block__radio-input::before {
+        width: 0.5vw;
+        height: 0.5vw;
+    }
+
+    .settings-dialog__setting__radio-block__radio-label {
+        gap: 0.4vw;
+        font-size: clamp(15px, 0.9vw, 0.9vw);
+    }
+
+    .settings-dialog__setting__radio-block__radio-label--not-first {
+        margin-left: 1.1vw;
+    }
+
+    .settings-dialog__setting__divisor {
+        margin-top: 1.2vw;
+    }
+
+    .settings-dialog__setting__number-input {
+        width: 7vw;
+        border-radius: max(5px, 0.2vw);
+        padding: 0.3vw 0.8vw;
+        margin-top: 1vw;
+        font-size: clamp(15px, 0.9vw, 0.9vw);
+    }
+
+    .settings-dialog__setting__volume-block {
+        gap: 0.9vw;
+        margin-top: 1vw;
+    }
+
+    .settings-dialog__setting__volume-block__title,
+    .settings-dialog__setting__volume-block__volume-output {
+        font-size: clamp(14px, 0.8vw, 0.8vw);
+    }
+
+    .settings-dialog__setting__volume-block__volume-slider {
+        width: 8vw;
+        height: 0.3vw;
+    }
+
+    .settings-dialog__setting__volume-block__volume-slider::-webkit-slider-runnable-track {
+        height: 0.3vw;
+    }
+
+    .settings-dialog__setting__volume-block__volume-slider::-moz-track {
+        height: 0.3vw;
+    }
+
+    .settings-dialog__setting__volume-block__volume-slider::-ms-track {
+        height: 0.3vw;
+    }
+
+    .settings-dialog__setting__volume-block__volume-slider::-webkit-slider-thumb {
+        height: 0.7vw;
+        width: 0.7vw;
+        margin-top: -0.2vw;
+    }
+
+    .settings-dialog__setting__volume-block__volume-slider::-moz-range-thumb {
+        height: 0.7vw;
+        width: 0.7vw;
+        margin-top: -0.2vw;
+    }
+
+    .settings-dialog__setting__volume-block__volume-slider::-ms-thumb {
+        height: 0.7vw;
+        width: 0.7vw;
+        margin-top: -0.2vw;
+    }
+
+    .settings-dialog__footer {
+        padding-top: 1.4vw;
+    }
+
+    .settings-dialog__footer__buttons-container {
+        gap: 1.6vw;
+    }
+
+    .settings-dialog__clear-button {
+        padding: 0.5vw 2.5vw;
+        font-size: clamp(18px, 1.1vw, 1.1vw);
+        border-radius: max(10px, 0.5vw);
+    }
+
+    .settings-dialog__back-button {
+        padding: 0.5vw 2.5vw;
+        font-size: clamp(18px, 1.1vw, 1.1vw);
+        border-radius: max(10px, 0.5vw);
+    }
+
+    .settings-dialog__footer__version-line {
+        padding: 0.5vw 1vw 1vw 1vw;
+    }
+
+    .settings-dialog__footer__version {
+        font-size: 0.9vw;
     }
 }
 
