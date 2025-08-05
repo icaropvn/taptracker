@@ -817,7 +817,7 @@ body {
 
     .actions__credits {
         font-size: clamp(18px, 1.4vh, 5vh);
-        margin: 2.2vh 0 2vh 0;
+        margin: 2.2vh auto 2vh auto;
     }
 
     .settings-dialog__header {
@@ -993,16 +993,16 @@ body {
     }
 
     .actions__decrement-button {
-        margin: 0 auto 1.5vw auto;
+        margin: 0 auto max(1.5vw, 20px) auto;
         min-width: 160px;
         width: 10vw;
-        padding: 14px;
+        padding: max(12px, 0.8vw), max(10px, 0.6vw);
         font-size: clamp(18px, 1.1vw, 2vw);
         border-radius: max(10px, 0.5vw);
     }
 
     .actions__bottom-line {
-        gap: 1.4vw;
+        gap: max(1.4vw, 15px);
     }
 
     .actions__reset-button,
@@ -1011,9 +1011,16 @@ body {
         width: 8vw;
         font-size: clamp(18px, 1.1vw, 2vw);
         border-radius: max(10px, 0.5vw);
+        padding: max(12px, 0.8vw), max(10px, 0.6vw);
+    }
+
+    .actions__credits {
+        font-size: clamp(15px, 0.8vw, 0.8vw);
+        margin: max(1.5vw, 20px) auto max(1.2vw, 15px) auto;
     }
 
     .settings-dialog {
+        min-width: 400px;
         height: 80vh;
         width: 40vw;
         margin: 0 auto;
@@ -1021,13 +1028,8 @@ body {
         border-bottom-right-radius: max(10px, 1vw);
     }
 
-    .actions__credits {
-        font-size: clamp(18px, 0.8vw, 0.8vw);
-        margin: 1.5vw auto 1.2vw auto;
-    }
-
     .settings-dialog__header {
-        padding: 2vw 1.5vw 1.5vw 1.5vw;
+        padding: max(2vw, 20px) max(1.5vw, 10px) max(1.5vw, 20px) max(1.5vw, 10px);
     }
 
     .settings-dialog__header__title {
@@ -1035,6 +1037,8 @@ body {
     }
 
     .settings-dialog__header__close-icon {
+        min-width: 36px;
+        min-height: 36px;
         width: 2vw;
         height: 2vw;
     }
@@ -1048,25 +1052,29 @@ body {
     }
 
     .settings-dialog__setting__title--not-first {
-        margin-top: 1.2vw;
+        margin-top: max(1.2vw, 20px);
     }
 
     .settings-dialog__setting__radio-block {
-        margin-top: 1vw;
+        margin-top: max(1vw, 16px);
     }
 
     .settings-dialog__setting__radio-block__radio-input {
+        min-width: 18px;
+        min-height: 18px;
         width: 1vw;
         height: 1vw;
     }
 
     .settings-dialog__setting__radio-block__radio-input::before {
+        min-width: 10px;
+        min-height: 10px;
         width: 0.5vw;
         height: 0.5vw;
     }
 
     .settings-dialog__setting__radio-block__radio-label {
-        gap: 0.4vw;
+        gap: max(0.4vw, 8px);
         font-size: clamp(15px, 0.9vw, 0.9vw);
     }
 
@@ -1075,20 +1083,21 @@ body {
     }
 
     .settings-dialog__setting__divisor {
-        margin-top: 1.2vw;
+        margin-top: max(1.2vw, 20px);
     }
 
     .settings-dialog__setting__number-input {
+        min-width: 140px;
         width: 7vw;
         border-radius: max(5px, 0.2vw);
-        padding: 0.3vw 0.8vw;
-        margin-top: 1vw;
+        padding: max(0.3vw, 4px) max(0.8vw, 10px);
+        margin-top: max(1vw, 16px);
         font-size: clamp(15px, 0.9vw, 0.9vw);
     }
 
     .settings-dialog__setting__volume-block {
-        gap: 0.9vw;
-        margin-top: 1vw;
+        gap: max(0.9vw, 10px);
+        margin-top: max(1vw, 15px);
     }
 
     .settings-dialog__setting__volume-block__title,
@@ -1097,26 +1106,33 @@ body {
     }
 
     .settings-dialog__setting__volume-block__volume-slider {
+        min-width: 160px;
+        min-height: 5px;
         width: 8vw;
         height: 0.3vw;
     }
 
     .settings-dialog__setting__volume-block__volume-slider::-webkit-slider-runnable-track {
+        min-height: 5px;
         height: 0.3vw;
     }
 
     .settings-dialog__setting__volume-block__volume-slider::-moz-track {
+        min-height: 5px;
         height: 0.3vw;
     }
 
     .settings-dialog__setting__volume-block__volume-slider::-ms-track {
+        min-height: 5px;
         height: 0.3vw;
     }
 
     .settings-dialog__setting__volume-block__volume-slider::-webkit-slider-thumb {
+        min-width: 15px;
+        min-height: 15px;
         height: 0.7vw;
         width: 0.7vw;
-        margin-top: -0.2vw;
+        margin-top: min(-0.2vw, -5px);
     }
 
     .settings-dialog__setting__volume-block__volume-slider::-moz-range-thumb {
@@ -1132,31 +1148,31 @@ body {
     }
 
     .settings-dialog__footer {
-        padding-top: 1.4vw;
+        padding-top: max(1.4vw, 20px);
     }
 
     .settings-dialog__footer__buttons-container {
-        gap: 1.6vw;
+        gap: max(1.6vw, 20px);
     }
 
     .settings-dialog__clear-button {
-        padding: 0.5vw 2.5vw;
+        padding: max(0.5vw, 8px) max(2.5vw, 30px);
         font-size: clamp(18px, 1.1vw, 1.1vw);
         border-radius: max(10px, 0.5vw);
     }
 
     .settings-dialog__back-button {
-        padding: 0.5vw 2.5vw;
+        padding: max(0.5vw, 8px) max(2.5vw, 40px);
         font-size: clamp(18px, 1.1vw, 1.1vw);
         border-radius: max(10px, 0.5vw);
     }
 
     .settings-dialog__footer__version-line {
-        padding: 0.5vw 1vw 1vw 1vw;
+        padding: max(0.5vw, 5px) max(1vw, 10px) max(1vw, 10px) max(1vw, 10px);
     }
 
     .settings-dialog__footer__version {
-        font-size: 0.9vw;
+        font-size: clamp(14px, 0.9vw, 0.9vw);
     }
 }
 
