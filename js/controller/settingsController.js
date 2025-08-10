@@ -1,6 +1,6 @@
 import { settingsService } from "../service/settingsService.js";
 import { setAmount, setTheme, setIncrementPerTap, setTapType, setDecrementButton, setSoundEffects, setSoundEffectsVolume } from "../controller/counterController.js";
-import { initVerificationListeners } from "../util/numericInputVerification.js";
+import { initVerificationListeners, isNewIncrementValid } from "../util/numericInputVerification.js";
 import { initVolumeListener } from "../util/volumeSliderBehavior.js";
 import { showNotification } from "../view/notificationAnimation.js";
 import { setAudioVolume } from "../service/audioService.js";
@@ -44,7 +44,7 @@ function addSettingsListeners() {
 
     incrementPerTapInput.addEventListener('change', () => {
         let newIncrement = Number.parseInt(incrementPerTapInput.value);
-        if(isNaN(newIncrement))
+        if(isNaN(newIncrement) || !isNewIncrementValid(newIncrement.toString()))
             newIncrement = 1;
         setIncrementPerTap(newIncrement);
     });
