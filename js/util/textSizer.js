@@ -10,13 +10,7 @@ export const textSizer = {
         const counter = document.querySelector('.counter__amount');
         let counterFontSize = Number.parseFloat(getComputedStyle(counter).fontSize);
 
-        console.log(counterFontSize);
-
-        console.log('while')
         while(counter.clientWidth > counterContainer.clientWidth) {
-            console.log('fonte: ' + counterFontSize);
-            console.log('tamanho do container: ' + counter.clientWidth);
-
             counterFontSize--;
             counter.style.fontSize = counterFontSize + 'px';
         }

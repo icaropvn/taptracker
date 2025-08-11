@@ -12,8 +12,6 @@ export function initVerificationListeners(numericInput) {
 }
 
 export function isNewIncrementValid(newIncrement) {
-    console.log('dado: ' + newIncrement + ' tipo: ' + typeof newIncrement);
-
     if(newIncrement.includes('e' || newIncrement.includes('.')))
         return false;
 

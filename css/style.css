@@ -768,12 +768,33 @@ body {
         height: 3.2vh;
     }
 
+    .button:active {
+        transform: translateY(max(5px, 0.6vh));
+    }
+
+    .button--primary {
+        box-shadow: 0 max(5px, 0.6vh) 0 0 var(--color-primary-button-extrusion);
+    }
+
+    .button--secondary {
+        box-shadow: 0 max(5px, 0.6vh) 0 0 var(--color-secondary-button-extrusion);
+    }
+
+    .button--tertiary {
+        box-shadow: 0 max(5px, 0.6vh) 0 0 var(--color-tertiary-button-extrusion);
+    }
+
+    .button--quaternary {
+        box-shadow: 0 max(5px, 0.6vh) 0 0 var(--color-quaternary-button-extrusion);
+    }
+
     .settings__button {
         min-width: 50px;
         min-height: 50px;
         width: 5.5vh;
         height: 5.5vh;
         border-radius: max(10px, 1vh);
+        margin: max(20px, 1.8vh);
     }
 
     .settings__icon {
